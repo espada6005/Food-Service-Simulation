@@ -2,13 +2,15 @@
 
 namespace Invoices;
 
+use DateTime;
+
 class Invoice {
     
     private float $finalPrice;
-    private string $orderTime;
+    private DateTime $orderTime;
     private int $estimatedTimeInMinutes;
 
-    public function __construct(float $finalPrice, string $orderTime, int $estimatedTimeInMinutes) {
+    public function __construct(float $finalPrice, DateTime $orderTime, int $estimatedTimeInMinutes) {
         $this->finalPrice = $finalPrice;
         $this->orderTime = $orderTime;
         $this->estimatedTimeInMinutes = $estimatedTimeInMinutes;
@@ -16,7 +18,7 @@ class Invoice {
 
     public function printInvoice(): void {
         echo "-------------------------------", PHP_EOL;
-        echo "Date: {$this->orderTime}", PHP_EOL;
+        echo "Date: {$this->orderTime->format("Y/m/d H:i:s")}", PHP_EOL;
         echo "Final Price: \${$this->finalPrice}", PHP_EOL;
         echo "-------------------------------", PHP_EOL;
     }

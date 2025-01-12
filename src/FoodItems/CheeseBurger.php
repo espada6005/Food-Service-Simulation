@@ -7,7 +7,7 @@ class CheeseBurger extends FoodItem {
     public const CATEGORY = "Burger";
 
     public function __construct() {
-        parent::__construct("CheeseBurger", "This is CheeseBurger", 6, 5);
+        parent::__construct("CheeseBurger", "This is CheeseBurger", 10, 5);
     }
 
     public static function getCategory(): string {
